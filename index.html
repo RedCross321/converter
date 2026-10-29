@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Конвертер валют</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="phone">
+    <div id="main-screen" class="screen active">
+      <header class="header">
+        <h1>Конвертер валют</h1>
+      </header>
+
+      <main class="main-content">
+        <div class="currency-block" data-side="from">
+          <button class="currency-selector" id="from-selector" type="button">
+            <div class="currency-info">
+              <span class="currency-code" id="from-code">RUB</span>
+              <span class="currency-name" id="from-name">Российский рубль</span>
+            </div>
+            <span class="chevron">›</span>
+          </button>
+          <div class="amount-field active" id="from-field">
+            <input type="text" id="from-amount" value="0" readonly inputmode="none">
+            <span class="currency-symbol" id="from-symbol">₽</span>
+          </div>
+        </div>
+
+        <div class="currency-block" data-side="to">
+          <button class="currency-selector" id="to-selector" type="button">
+            <div class="currency-info">
+              <span class="currency-code" id="to-code">USD</span>
+              <span class="currency-name" id="to-name">Доллар США</span>
+            </div>
+            <span class="chevron">›</span>
+          </button>
+          <div class="amount-field" id="to-field">
+            <input type="text" id="to-amount" value="0" readonly inputmode="none">
+            <span class="currency-symbol" id="to-symbol">$</span>
+          </div>
+        </div>
+      </main>
+
+      <div class="numpad">
+        <button class="numpad-btn ac" data-action="ac">AC</button>
+        <button class="numpad-btn backspace" data-action="backspace">
+          <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
+            <path d="M8.5 1H19C20.1 1 21 1.9 21 3V13C21 14.1 20.1 15 19 15H8.5L1 8L8.5 1Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M13 5L17 11M17 5L13 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="numpad-btn" data-value="7">7</button>
+        <button class="numpad-btn" data-value="8">8</button>
+        <button class="numpad-btn" data-value="9">9</button>
+        <button class="numpad-btn" data-value="4">4</button>
+        <button class="numpad-btn" data-value="5">5</button>
+        <button class="numpad-btn" data-value="6">6</button>
+        <button class="numpad-btn" data-value="1">1</button>
+        <button class="numpad-btn" data-value="2">2</button>
+        <button class="numpad-btn" data-value="3">3</button>
+        <button class="numpad-btn zero" data-value="0">0</button>
+        <button class="numpad-btn" data-value=",">,</button>
+      </div>
+    </div>
+
+    <div id="select-screen" class="screen">
+      <header class="header select-header">
+        <button class="back-btn" id="back-btn" type="button">←</button>
+        <h1>Изменить валюту</h1>
+      </header>
+
+      <div class="search-wrapper">
+        <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M11 11L14.5 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input type="text" id="search-input" placeholder="Search currency..." autocomplete="off">
+          <button class="clear-search" id="clear-search" type="button" hidden>×</button>
+        </div>
+      </div>
+
+      <ul class="currency-list" id="currency-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
